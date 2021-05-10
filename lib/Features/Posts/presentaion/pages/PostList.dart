@@ -34,7 +34,25 @@ class PostsList extends ConsumerWidget {
                   },
                 ),
             error: (err, stack) => Center(
-                  child: Text("${err.toString}"),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                            width: MediaQuery.of(context).size.width * 0.7,
+                            height: MediaQuery.of(context).size.height * 0.5,
+                            child: Image.asset("assets/img/noConnection.png")),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Connection error, please check your connection and tap to try again",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 )));
   }
 }
